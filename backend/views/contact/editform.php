@@ -1,0 +1,41 @@
+<?php
+
+?>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h3>Edit Contact:</h3>
+            <div class="header-gradient"></div>
+
+            <form method="post" action="<?= \yii\helpers\Url::to(['contact/edit-contact']) ?>">
+            <input type="hidden" name="_csrf-backend" value="<?= Yii::$app->request->getCsrfToken() ?>"> 
+            <input type="hidden" name="user_id" value="<?= $contact_info['user_id']; ?>">    
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="user_name" placeholder="Enter your username" value="<?= $contact_info['user_name'] ?>" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" value="<?= $contact_info['email'] ?>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone_number" placeholder="Enter your phone number" value="<?= $contact_info['phone_number'] ?>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="3" name="address" placeholder="Enter your complete address"><?= $contact_info['address'] ?></textarea>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary py-2">Save & Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
