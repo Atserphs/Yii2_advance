@@ -2,6 +2,7 @@
  namespace backend\controllers;
  use Yii;
  use yii\web\Controller;
+ use yii\db\ActiveRecord;
  use common\models\Contact;
  
 
