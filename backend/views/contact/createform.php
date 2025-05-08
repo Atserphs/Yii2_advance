@@ -8,14 +8,14 @@
         <h3 className="text-3xl font-bold underline text-red-800">Add Contact:</h3>
             <div class="header-gradient"></div>
 
-            <form method="post" action="<?= \yii\helpers\Url::to(['contact/add-contact-record']) ?>">
+            <form method="post" action="<?= \yii\helpers\Url::to(['contact/add-contact-record']) ?>" enctype="multipart/form-data">
             <input type="hidden" name="_csrf-backend" value="<?= Yii::$app->request->getCsrfToken() ?>"> 
-                
+
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="user_name" placeholder="Enter your username">
+                    <label for="image" class="form-label">Profile Image(Optional)</label>
+                    <input type="file" class="form-control" name="image" placeholder="Enter your username">
                 </div>
-            
+
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="user_name" placeholder="Enter your username">

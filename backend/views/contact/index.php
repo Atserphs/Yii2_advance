@@ -82,6 +82,7 @@ function close_alert() {
       
       <thead>
         <tr>
+          <th scope="col"></th>
           <th scope="col">User Id</th>
           <th scope="col">Username</th>
           <th scope="col">Phone Number</th>
@@ -93,6 +94,7 @@ function close_alert() {
       <tbody>
       <?php foreach ($contact_re as $contact): ?>
                 <tr class="border-bottom-[1px]">
+                    <td><img style="height:40px; aspect-ratio:1/1; border-radius:50%;" src="<?= Yii::$app->request->baseUrl . "/" . $contact['user_pp_path']?>"  alt="<?= $contact['user_name'] . "_img" ?>"></td>
                     <td><?= $contact['user_id']; ?></td>
                     <td><?= $contact['user_name']; ?></td>
                     <td><?= $contact['phone_number']; ?></td>
